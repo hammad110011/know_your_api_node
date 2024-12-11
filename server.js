@@ -22,7 +22,7 @@ app.post('/api/process-text', async (req, res) => {
 
     try {
         console.log("Forwarding text to Python server...");
-        const response = await axios.post('http://localhost:5004/process-text', { text });
+        const response = await axios.post('https://know-your-api-176bce61f2e2.herokuapp.com/process-text', { text });
         res.json(response.data);
     } catch (error) {
         console.error('Error calling Python server:', error.response?.data || error.message);
@@ -42,7 +42,7 @@ app.post('/api/fetch-data', async (req, res) => {
 
     try {
         console.log("Forwarding URL to Python server...");
-        const response = await axios.post('http://localhost:5004/fetch-data', { url });
+        const response = await axios.post('https://know-your-api-176bce61f2e2.herokuapp.com/fetch-data', { url });
         res.json(response.data);
     } catch (error) {
         console.error('Error calling Python server:', error.message);
@@ -61,7 +61,7 @@ app.post('/api/fetch-thread-data', async (req, res) => {
 
     try {
         console.log("Forwarding thread URL to Python server...");
-        const response = await axios.post('http://localhost:5004/fetch-thread-data', { url });
+        const response = await axios.post('https://know-your-api-176bce61f2e2.herokuapp.com/fetch-thread-data', { url });
         res.json(response.data);
     } catch (error) {
         console.error('Error calling Python server for thread data:', error.message);
@@ -80,7 +80,7 @@ app.post('/api/fetch-threads', async (req, res) => {
 
     try {
         console.log("Forwarding thread URL to Python server...");
-        const response = await axios.post('http://localhost:5004/fetch-threads', { url });
+        const response = await axios.post('https://know-your-api-176bce61f2e2.herokuapp.com/fetch-threads', { url });
         res.json(response.data);
     } catch (error) {
         console.error('Error calling Python server for thread data:', error.message);
