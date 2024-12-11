@@ -6,7 +6,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-const PORT = 5003;
+const PORT = process.env.PORT || 5003; // Use the dynamic port from Heroku or 5003 locally
 
 app.use(cors());
 app.use(bodyParser.json());
